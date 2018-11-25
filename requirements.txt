@@ -9,6 +9,7 @@
 # =============================================================================
 #
 # Add your pinned requirements so that they can be easily installed with:
+# Python Version: 3.6.6
 # pip install -r requirements.txt
 # Remember to also add them in setup.cfg but unpinned.
 # Example:
