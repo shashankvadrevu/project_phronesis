@@ -3,11 +3,12 @@ import pprint
 import requests
 import json
 import re
+import sys
 from bs4 import BeautifulSoup
 
 
-def parse_response():
-    with open('D:/project_phronesis/docs/files/recall_list.txt', 'r') as f:
+def parse_response(path):
+    with open(path, 'r') as f:
         recall_list = ast.literal_eval(f.read())
 
     for each in recall_list:
@@ -52,9 +53,46 @@ def pasre_cms_who_what_consumer(j_soup):
     return cms_who_what_consumer_dict
 
 
+def parse_product_details(j_soup):
+    basic_product_dict = {}
+    pattern = "product_"
+    product_details = []
+    product_dict = {}
+    # product_list = []
+    for each in j_soup["panels"]:
+        if pattern in each.get('panelName') and each.get('panelName') != 'cms_product_details_background':
+            html = each.get('text')
+            basic_details = html.split("<BR/>")
+            product_details.append(basic_details)
+
+    for i, each in enumerate(product_details):
+        for subEach in each:
+            try:
+                basic_each = subEach.split("</b>")
+                key1 = (basic_each[0].replace("<b>", ""))
+                key1 = key1.replace(":", "")
+                value0 = basic_each[1].lstrip(" ")
+                soup = BeautifulSoup(value0, "html5lib")
+                value1 = soup.get_text()
+                basic_product_dict.update({key1: value1})
+            except Exception as e:
+                pass
+    # product_list.append(dict(basic_product_dict))
+        key2 = "product_{}".format(i + 1)
+        product_dict.update({key2: dict(basic_product_dict)})
+
+    return product_dict
+
+
 if __name__ == '__main__':
-    json_respone = parse_response()
-    pprint.pprint(json_respone)
+
+    path = str(sys.argv[1])
+    # path = 'D:/project_phronesis/docs/files/recall_list.txt'
+    json_respone = parse_response(path)
+    # pprint.pprint(json_respone)
     basic_details = parse_basicDetails(json_respone)
     who_what = pasre_cms_who_what_consumer(json_respone)
-    pprint.pprint((who_what))
+    # pprint.pprint((who_what))
+    product_details = parse_product_details(json_respone)
+
+    pprint.pprint(product_details)
