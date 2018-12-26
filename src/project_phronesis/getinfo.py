@@ -87,7 +87,7 @@ def parse_product_details(j_soup):
 if __name__ == '__main__':
 
     path = str(sys.argv[1])
-    # path = 'D:/project_phronesis/docs/files/recall_list.txt'
+    # path = 'D://docs/files/recall_list.txt'
     json_respone = parse_response(path)
     # pprint.pprint(json_respone)
     basic_details = parse_basicDetails(json_respone)
