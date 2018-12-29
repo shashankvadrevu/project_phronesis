@@ -10,7 +10,6 @@ import re
 import random
 
 
-
 def parse_basicDetails(j_soup):
     for each in j_soup['panels']:
         if each.get('panelName') == 'basic_details':
@@ -124,4 +123,3 @@ if __name__ == '__main__':
     # pprint.pprint(product_details)
 
     path = str(sys.argv[1])
-   

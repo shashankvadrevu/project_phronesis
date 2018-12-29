@@ -9,6 +9,11 @@ import parseResponse
 import time
 import datetime
 
+"""
+Added a parse script
+
+"""
+
 
 def parse_response(path):
 
