@@ -21,6 +21,9 @@ Ex: Eat Smart brand Salad Shake Ups. This information is too granular for analys
 
 2. Specific Reason for Recall: In cases where the reason for recall is not Microbiological or Allergen the exact reason is not specified in the API metadata. Ex: Microbiological – Salmonella vs Extraneous Material. In case of Microbiological the exact reason for recall is provided as Salmonella while Extraneous Material does not have such information. The same information is provided in the text “Uruthira brand Hand Pounded Red Rice recalled due to presence of sand (rocks)”
 
+Phase-1:
+![alt text](https://github.com/shashankvadrevu/project_phronesis/blob/master/datasets/Pictures/Phase1.png "Phase-1")
+
 Related Work
 ------------
 The problem to generate metadata can be viewed as document classification problem for generating product category and key phrase extraction problems. Early research on document classification were based on Bayesian Classification approach as studied by Andrew K McCallum in which multiple classes that comprise a document were represented by a mixture model. As early as 2000, neural networks have been suggested by Dieter Merkl for document classification. More recent studies by Pei-Yi Hao in 2006 suggest an SVM based model for automatic categorization of documents into pre-defined topic hierarchies where ‘global context information’, has been used in conjunction with ‘local context information’. On the other hand, early works on key word extraction include SVM based model as suggested by Kuo Zhang in 1999.
