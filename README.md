@@ -43,17 +43,22 @@ For creating a training dataset with labelled data,
 the United States Nutrition Database: https://ndb.nal.usda.gov/ndb/search/
 is used in conjunction with publicly available Walmart API: http://api.walmartlabs.com/v1/search?piKey={API_Key}={S}
 
-===========
+Current Status
+==============
+Data Acquired from Candaian and US Recall Databases. Currently working on aquiring product data.
 
+Future Updates
+==============
+Evaluation of Classification algorithms for product classification.
+Reference: https://medium.com/dataweave/implementing-a-machine-learning-based-ecommerce-product-classification-system-f846d894148b
+
+Installation
+============
 pipenv shell
 pipenv install ipykernal
 ipython kernel install --user --name=phronesis
 jupyter notebook
 
-Test using PyCharm
-
-Note
-====
 
 This project has been set up using PyScaffold 3.1. For details and usage
 information on PyScaffold see https://pyscaffold.org/.
