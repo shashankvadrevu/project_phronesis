@@ -40,7 +40,7 @@ For creating a training dataset with labelled data,
 the United States Nutrition Database: https://ndb.nal.usda.gov/ndb/search/
 is used in conjunction with publicly available Walmart API: http://api.walmartlabs.com/v1/search?piKey={API_Key}={S}
 
-a===========
+===========
 
 pipenv shell
 pipenv install ipykernal
