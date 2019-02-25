@@ -13,14 +13,15 @@ import datetime
 Added a parse script
 
 """
-
-
 def parse_response(path):
 
     with open(path, 'r') as f:
         recall_list = ast.literal_eval(f.read())
         random.seed(4)
         recall_list_200 = random.sample(recall_list, 10)
+        pprint.pprint(recall_list)
+
+    break
 
     list_response = []
     recall_details_dict = {}
