@@ -1,0 +1,29 @@
+725e52a7-04d2-4ff8-9740-a274d59b87dc
+us-east-1
+AKIAJS2EWOARP4ZYTK3A 
+
+http://localhost:8000/shell
+
+
+aws dynamodb create-table --endpoint-url http://localhost:8000 \
+    --table-name Recent_Recall_CAN \
+    --attribute-definitions \
+        AttributeName=recallId,AttributeType=N \
+    --key-schema \
+        AttributeName=recallId,KeyType=HASH \
+    --provisioned-throughput \
+        ReadCapacityUnits=5,WriteCapacityUnits=5
+
+
+aws dynamodb create-table --endpoint-url http://localhost:8000 --cli-input-json file://C:/Users/Shashank/Desktop/recall_15_can.json
+
+aws dynamodb describe-table --table-name Recent_15Recall_CAN --endpoint-url http://localhost:8000
+
+aws dynamodb get-item --table-name Recent_15Recall_CAN --key "{""recallId"": {""S"": ""68618""}}" --endpoint-url http://localhost:8000
+
+aws dynamodb delete-item --table-name Recent_15Recall_CAN --key "{""recallId"": {""S"": ""68618""}}" --endpoint-url http://localhost:8000
+
+aws dynamodb delete-item --table-name Recent_15Recall_CAN --key "{""recallId"": {""S"": ""68604""}}" --endpoint-url http://localhost:8000
+
+aws dynamodb scan-table --table-name Recent_15Recall_CAN --endpoint-url http://localhost:8000
+
